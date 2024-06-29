@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"contact= "id=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <title>personal portfolio web</title>
+        
+        
+        <script src="https://kit.fontawesome.com/65e886a56c.js" crossorigin="anonymous"></script>
+        <style>
+            .carousel-item {
+    max-width: 100%; /* Ensure items do not exceed device width */
+    text-align: center; /* Center align text or content inside carousel items */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.carousel-item img {
+    max-width: 100%; /* Ensure images inside carousel items do not exceed device width */
+    height: auto; /* Maintain image aspect ratio */
+}
+
+                @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f4ed;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+  text-align: center;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxes {
+  /*background-color: rgb(62, 119, 165);*/
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(100vw);
+  transition: transform 1s ease;
+  overflow-x: auto; 
+  background-size: cover; /* Add this line */
+  background-position: center; /* Add this line */
+}
+
+/* selects even boxes to come in from opposite side */
+.boxes:nth-of-type(even) {
+  transform: translateX(-100vw);
+}
+
+.boxes.show {
+  transform: translateX(0);
+}
+
+.boxes h2 {
+  font-size: 40px;
+}
+
+            *{
+    margin:  0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    
+    color: #fff;
+}
+.background-div {
+    width: 100%; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-image: url("https://wi.wallpapertip.com/wsimgs/59-593279_real-estate-hd-wallpapers-real-estate-image-hd.jpg"); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire div */
+    background-position: center; /* Center the background image */
+  }
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding:10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+ ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size:  18px;
+}
+
+ul li a::after{
+    content: '';
+    width:0px;
+    height: 3px;
+    background: #ff004f;
+    position:fixed;
+    transition: 0.5s;
+    margin-left: -46px;
+    margin-top: 20px;
+    overflow: hidden ;
+}
+ul li a:hover::after{
+    width: 45px;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span {
+    color: #ff004f;
+}
+/*---------about-----------*/
+#About{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 30%; /* Adjust the width of the image column */
+    margin-right: 20px;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 70%;
+}
+
+.sub-title{
+     font-size: 60px;
+     font-weight: 600;
+     color: #fff;
+}
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    transition: 0.5s;
+    background-color: #ff004f;
+}
+
+.tab-links:hover {
+    color: #ff004f;
+}
+
+.tab-links.active {
+    color: #ff004f;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #cbd508;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/*---------------services------------*/
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    flex-wrap: nowrap; /* Ensure the items do not wrap */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow: hidden;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:background 0.5s,transform 0.5s;
+}
+.services-list1 div{
+    background:#ababab;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:background 0.5s,transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display:inline-block;
+}
+.services-list div :hover{
+    background: #262626;
+    transform: translateY(-10px);
+}
+/* Styles for the small boxes */
+.service-box {
+  background: #262626;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  width: 150px;
+  transition: background 0.5s, transform 0.5s;
+}
+
+.service-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.service-box h2 {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Styles for the services list */
+.services-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.services-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.services-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.services-list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+/*---------------portfolio---------------------*/
+#portfolio{
+    padding: 50px 0;
+}
+.Work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.Work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.Work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: ease-in;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+}
+.Work:hover img{
+    transform: scale(1.1)
+}
+.Work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 5px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: ease-in;
+}
+.btn :hover{
+    background: #ff004f
+}
+/*-------------------------------contact---------------------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icon{
+    margin-top: 30px;
+}
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline block;
+    transition: transition 0.5s;
+}
+.social-icon a :hover{
+color: #ff004f;
+transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form.btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i{
+    color: #ff004f;
+}
+/*----------------------------------------css for small scree------*/
+.nav.fa-solid{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    #header{
+        background-image:url();
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav.fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+    }
+}
+#About .services-list {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    padding: 10px; /* Reduce padding to keep content within viewport */
+    background: none;
+    margin-top: 0; /* Remove or adjust top margin */
+    margin-bottom: 0;
+}
+
+#About .service-box {
+    width: 150px; /* Adjust width of each service box */
+    padding: 10px; /* Adjust padding within each service box */
+    margin-right: 10px; /* Add margin between service boxes */
+}
+/* Reduce spacing between about-col-2 and services-list */
+#About .about-col-2 {
+    flex-basis: 60%;
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+#About .services-list {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    padding: 10px; /* Adjust padding to keep content within viewport */
+    margin-top: 0; /* Remove or adjust top margin */
+    margin-bottom: 0; /* Remove or adjust bottom margin */
+}
+#About .services-list .service-box {
+    background-color: transparent; /* Remove tile inside color */
+    color: #000; /* Change font color to black */
+    transition: background 0.5s, transform 0.5s; /* Optional: Keep transitions if needed */
+}
+#About .services-list .service-box h4 {
+    background-color: transparent; /* Remove text background color */
+}
+/* Adjust the columns within the Contact section */
+.contact-col {
+    width: 50%;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+
+/* Ensure consistent styling for social icons and form elements */
+.social-icon a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icon a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+form {
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: calc(100% - 20px); /* Adjust width and padding as needed */
+    border: 1px solid #ccc; /* Ensure consistent border styling */
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px; /* Adjust font size */
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #ff004f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #d60046;
+}
+/* Responsive CSS */
+@media only screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .header-text {
+        margin-top: 50%;
+        font-size: 16px;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    nav .logo {
+        width: 100px; /* Adjust logo size for smaller screens */
+    }
+    nav ul {
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px; /* Adjust menu position for mobile view */
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+    }
+    .services-list {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        background: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .service-box {
+        width: 150px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .about-col-2 {
+        flex-basis: 60%;
+        margin-right: 20px;
+    }
+    .contact-col {
+        width: 100%; /* Adjust width for full width on smaller screens */
+        padding: 20px; /* Adjust padding as needed */
+    }
+    .social-icon a {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+    form input,
+    form textarea {
+        width: calc(100% - 20px); /* Adjust width and padding as needed */
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 16px; /* Adjust font size */
+        box-sizing: border-box;
+    }
+    .btn {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}
+/* Styling for the footer */
+footer {
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 20px; /* Adjust as needed */
+        }
+        
+        .footer-links {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+        
+        .footer-logo {
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 10px; /* Adjust spacing */
+        }
+        
+    </style>
+
+
+        </style>   
+    </head>
+    <body>
+    <div class="cont"></div>
+    <div class="boxes" style="background-image: url('https://www.allthingsfinance.net/wp-content/uploads/2019/06/load-image-9.jpeg'); background-size: cover; background-position: center;">
+<div id="header" class="background-div">
+    <div class="container">
+        <nav>
+            <img src="logo.jpg" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#portfolio">Career</a></li>
+                <li><a href="#contact">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+ <!---------------<i class="fa-solid fa-xmark" onclick="closemenu"></i>----->
+            </ul>
+         <!-----------<i class="fa-solid fa-bars" onclick="openmenu"></i>------------>
+        </nav>
+        <div class="header-text">
+            <p style="color: black;">PROPCENTRE</p>
+            <h6 style="color: black;">Welcome to PropCentre, your trusted gateway to<br> exceptional real 
+                estate opportunities in the heart of  <span>Indore,</span><br> Madhya Pradesh.</h6>
+        </div>
+    </div>
+</div>
+</div>
+
+<!----------------------------about-------------------------------------------------------------------------->
+<div class="boxes" >
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="https://th.bing.com/th/id/OIP.fIMrRGpQAs9WN3PA9Q_SPAAAAA?rs=1&pid=ImgDetMain">
+                </div>
+                    
+                <div class="about-col-2">
+                    <h1 class="sub-title" style="color:rebeccapurple ;">About Us</h1>
+                    <p>Welcome to PropCentre! Situated in the vibrant city of Indore, Madhya Pradesh, 
+                        we are dedicated to delivering unparalleled real estate solutions. With a deep-rooted 
+                        commitment to excellence and a wealth of local expertise, we strive to make your property 
+                        journey seamless and rewarding. Discover your next dream property with us today.</p>
+
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('services')">Services</p>
+                        <p class="tab-links" onclick="opentab('tools')">Useful Tools</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="services-list" id="services">
+                        <div class="services-list">
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/buy-key.jpg" alt="Service Image">
+                                <h4>Buy</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/Home-Loan.png" alt="Service Image">
+                                <h4>Home Loans</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/broker.png" alt="Service Image">
+                                <h4>Channel Partner Services</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/builder.png" alt="Service Image">
+                                <h4>Building Services</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/service.png" alt="Service Image">
+                                <h4>Other Services</h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="tab-contents" id="tools">
+                    <div class="services-list">
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/finance.png" alt="Tool Image">
+                            <h4>EMI Calculator</h4>
+                        </div>
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/calculator.png" alt="Tool Image">
+                            <h4>Stamp Duty Calculator</h4>
+                        </div>
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/home_affordability_calculator.png" alt="Tool Image">
+                            <h4>Home Affordability Calculator</h4>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="boxes">
+<!--------services-------------event.currentTarget.classList.add("active-link") line 93 ---->
+<div  id="Services">
+    <div class="container">
+        <h1 class="sub-title" style="color:indigo;font-family:  system-ui;">Our Services</h1>
+        <div class="services-list" style="color: bisque;background-color:#ababab;">
+            <div>
+                <i class="fa-brands fa-uikit"></i>
+                <h2>Site visits and walkthrough</h2>
+                <p>Experience the essence of your future property firsthand with PropCentre's expert site visits and walkthroughs. Explore every detail and envision the possibilities tailored to your needs and aspirations. Discover your next investment with confidence.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-codepen"></i>
+                <h2>Deals and Negotiations</h2>
+                <p> Navigate deals and negotiations seamlessly with PropCentre. Our expert team is dedicated to securing the best outcomes for every transaction. From strategic planning to skilled negotiation, we ensure your interests are prioritized. Trust us to handle the complexities, so you can focus on your future investment with confidence.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-pen"></i>
+                <h2>Ensuring Project Completion</h2>
+                <p> "PropCentre guarantees project completion with meticulous attention to detail and proactive management. From inception to final handover, our dedicated team ensures every aspect of your real estate project is expertly handled. Trust us to deliver on time and within budget, turning your vision into reality."</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-film"></i>
+                <h2>Buying and Loan Documentation</h2>
+                <p> "PropCentre simplifies the buying process with expert guidance on loan documentation. Our dedicated team ensures seamless handling of all paperwork, ensuring a hassle-free experience. Trust us to navigate the complexities, making your property purchase straightforward and stress-free."</p>
+                    <a href="#">Learn more</a>
+            </div>            <div>
+                <i class="fa-solid fa-film"></i>
+                <h2>HNI's portfolio management</h2>
+                <p> "Explore tailored portfolio management for High Net Worth Individuals (HNIs) with PropCentre. Our expert advisors craft personalized investment strategies to optimize wealth growth and financial security, ensuring precise alignment with your unique goals and aspirations."</p>
+                    <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="boxes">
+<!---------------------------------------------banking partners-->
+<div  id="Services">
+    <div class="container">
+        <h1 class="sub-title" style="color:indigo;font-family:  system-ui;">Our Banking Partners</h1>
+        <div class="services-list" style="background-color: #fff;">
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://th.bing.com/th/id/OIP.CvYRp16bslSo5iqbvNXpZAHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="IIFL Image" width="200" height="200">
+              
+                
+            </div>
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://static.vecteezy.com/system/resources/previews/020/336/362/original/hdfc-logo-hdfc-icon-free-free-vector.jpg" alt="IIFL Image" width="200" height="200">
+                
+                
+            </div>
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://th.bing.com/th/id/OIP.LVUXwrKrm7Gy0aP6CFJ53gHaHa?rs=1&pid=ImgDetMain" alt="IIFL Image" width="200" height="200">
+               
+                
+            </div>
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://static.vecteezy.com/system/resources/previews/024/039/038/large_2x/punjab-national-bank-pnb-logo-transparent-free-png.png" alt="IIFL Image" width="200" height="200">
+            
+               
+            </div>
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://www.medianews4u.com/wp-content/uploads/2019/05/IIFl.jpg" alt="IIFL Image" width="200" height="200">
+           
+               
+            </div>
+            <div style="background-color: transparent; padding: 20px; text-align: center;">
+                <img src="https://bankingtides.com/wp-content/uploads/2021/04/LIC.jpg" alt="IIFL Image" width="200" height="200">
+             
+               
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="boxes">
+<!----------portfolio----------------->
+<div id="portfolio">
+    <div class="container">
+        <h4 class="sub-title" style="color: rgb(11, 176, 231); size: 15px;">OUR FEATURED PROJECT IN INDORE</h4>
+        <div class="Work-list">
+            <div class="Work">
+                <img src="https://webneel.com/daily/sites/default/files/images/daily/08-2014/2-real-estate-photography.jpg">
+                <div class="layer">
+                    <h3>ID Scanner</h3>
+                    <p>This App is used by the univercity to check the student details by scanning the given qr on there id card </p>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="Work">
+                <img src="https://i.pinimg.com/originals/43/ac/19/43ac191b72acda77425f45dba8d32cf0.jpg">
+                <div class="layer">
+                    <h3>Code Editor</h3>
+                    <p>Code Editor is a software whare you can code diffrent language and get result at instant </p>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="Work">
+                <img src="https://i.pinimg.com/originals/d0/3c/4b/d03c4b99430fd0ebe1b0ea541128ecdc.jpg">
+                <div class="layer">
+                    <h3>Visual X</h3>
+                    <p>Visual x is a software for the blind and deef people the can handle this app by hand gesture and voice command </p>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn" style="color: coral;">See more</a>
+    </div>
+</div>
+</div>
+<div class="boxes">
+<!---------------------------------Contact----------------------------------------------->
+<div id="contact">
+    <div style="border: 2px solid #ccc; border-radius: 3px; margin: 250px auto 0; width: 80%; padding-top: 20px;" class="container">
+        <div class="row">
+            <!-- Left side content -->
+            <div class="contact-col">
+                <h2 style="color: #262626; display: inline-block; font-size: 24px; margin-right: 10px;">Seeking expert guidance in navigating your property journey?</h2><br><br><br><br>
+                <p ><i ></i></p>
+                <p style="color: #262626; display: inline-block; margin-left: 10px;"><i class="fa-solid fa-phone"></i> +91-7368092580</p><br><br>
+                <p style="color: #262626; display: inline-block; margin-left: 10px;"><i class="fa-solid fa-paper-plane"></i> propcentreindore@gmail.com</p><br><br>
+                <p style="color: #262626; display: inline-block; margin-left: 10px;"><i class="fas fa-map-marker-alt"></i>  <a href="https://www.google.com/maps?q=22.7152081,75.8734006">RNT Marg, South Tukoganj, Indore, Madhya Pradesh 452001</a></p>
+                <div class="social-icon" style="margin-top: 10px;">
+                    <a href="https://www.facebook.com/himanshu.ramteke.9843/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/himansxhu_/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <!-- Right side content -->
+            <div class="contact-col">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;">
+                    <input type="email" name="email" placeholder="Your Email" required style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;">
+                    <textarea name="Message" rows="6" placeholder="Your Queries ? Our Team Will Try To Reach Out To You As Soon As Possible 😇" style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;"></textarea>
+                    <button type="submit" class="btn btn2" style="background-color: #ff004f; color: #fff; padding: 10px 20px; border: none; cursor: pointer; transition: background-color 0.3s;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <footer>
+            <div>
+                <h3>The PropCentre</h3>
+                <p>Your Home Buying Journey.</p>
+                <img src="logo.jpg" alt="Realmaker Logo" class="footer-logo">
+            </div>
+            <div>
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li>Buy</li>
+                    
+                    <li>Home Loans</li>
+                    <li>Channel Partner Services</li>
+                    <li>Builder Services</li>
+                    <li>Other Services</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Know Us</h4>
+                <ul class="footer-links">
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                    <li>Feedback</li>
+                    <li>Blog</li>
+                    <li>Articles & Events</li>
+                    <li>Research & Reports</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Reach Us</h4>
+                
+                <p>+91 7368092580</p>
+                <p><a href="mailto:propcentreindore@gmail.com">info@propcentreindoreonline.com</a></p>
+                <p>Contact us on Whatsapp</p>
+            </div>
+            <div>
+                <p>&copy;PropCentre 2024. All rights reserved. Designed and Developed By falcon645</p>
+            </div>
+        </footer>
+        
+    </div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        
+        document.getElementById(tabname).classList.add("active-tab");
+    } 
+</script>
+
+<script>
+    function opentab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab-contents");
+  var y = document.getElementsByClassName("tab-links");
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active-tab");
+  }
+  for (i = 0; i < y.length; i++) {
+    y[i].classList.remove("active-link");
+  }
+  document.getElementById(tabName).classList.add("active-tab");
+  event.currentTarget.classList.add("active-link");
+}
+
+    var sidemenu = document.getElementById("sidemenu");
+    const boxes = document.querySelectorAll('.boxes');
+
+  window.addEventListener('scroll', checkBoxes);
+
+  // Call function first to allow for content boxes to currently be visible in the view port
+  checkBoxes();
+
+  function checkBoxes() {
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    boxes.forEach(box => {
+      // getBoundingClientRect returns a dom rectangle providing info from where it is in the viewport
+      const boxTop = box.getBoundingClientRect().top;
+
+      // as soon as the top of the next box is less than the trigger bottom point
+      // we add class of 'show' and the boxes appear. As we scroll up the function is checked again 
+      // and will remove content boxes as well.
+      if (boxTop < triggerBottom) {
+        box.classList.add('show');
+      } else {
+        box.classList.remove('show');
+      }
+    });
+  }
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        closemenu.style.right="200px";
+    }
+</script>
+
+</body>
+</html>
