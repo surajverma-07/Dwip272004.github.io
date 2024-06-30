@@ -6,7 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>personal portfolio web</title>
         <script src="https://kit.fontawesome.com/65e886a56c.js" crossorigin="anonymous"></script>
-
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "BXGk-0VnZb5Lwc0DB",
+            });
+        })();
+        </script>
         <style>
             .carousel-item {
                 max-width: 100%; /* Ensure items do not exceed device width */
@@ -1128,7 +1137,7 @@
     function SendMail(){
         var params = {
             from_name : document.getElementById("name").value,
-            email : document.getElementById("email").value,
+            email : document.getElementById("email_id").value,
             message : document.getElementById("message").value
         } 
         emailjs.send("service_m2ykiy5","template_ajxgcoj",params).then(function(res){
