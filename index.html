@@ -7,14 +7,11 @@
         <title>PropCentre</title>
         <script src="https://kit.fontawesome.com/65e886a56c.js" crossorigin="anonymous"></script>
         <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-        </script>
+        <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
         <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "BXGk-0VnZb5Lwc0DB",
-            });
-        })();
+          document.addEventListener('DOMContentLoaded', function() {
+            emailjs.init("7Q_sJdnEmxKqJ37wM");
+          });
         </script>
         <style>
             .carousel-item {
@@ -1011,11 +1008,11 @@
             </div>
             <!-- Right side content -->
             <div class="contact-col">
-                <form>
+                <form id="contact-form">
                     <input type="text" id= 'name'name="Name" placeholder="Your Name" required style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;">
-                    <input type="email" id="email_id" name="email" placeholder="Your Email" required style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;">
                     <textarea name="Message" id="message" rows="6" placeholder="Your Queries ? Our Team Will Try To Reach Out To You As Soon As Possible 😇" style="width: calc(100% - 20px); border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; font-size: 16px; box-sizing: border-box;background-color: #fff;color: #262626;"></textarea>
-                    <button type="submit" class="btn btn2" style="background-color: #ff004f; color: #fff; padding: 10px 20px; border: none; cursor: pointer; transition: background-color 0.3s;">Submit</button>
+                    <button type="button" class="btn btn2" onclick="sendEmail()" style="background-color: #ff004f; color: #fff; padding: 10px 20px; border: none; cursor: pointer; transition: background-color 0.3s;">Send</button>
                 </form>
             </div>
         </div>
@@ -1134,17 +1131,25 @@
     function closemenu(){
         closemenu.style.right="200px";
     }
-    function SendMail(){
-        var params = {
-            from_name : document.getElementById("name").value,
-            email : document.getElementById("email_id").value,
-            message : document.getElementById("message").value
-        } 
-        emailjs.send("service_m2ykiy5","template_ajxgcoj",params).then(function(res){
-            alert("Querry Sent Successful !!!"+ res.status);
-        })
+    
+    function sendEmail() {
+      var templateParams = {
+        from_name: document.getElementById("name").value,
+        message : document.getElementById("message").value,
+        email: document.getElementById("email").value
+      };
+
+      emailjs.send("service_m2ykiy5", "template_ajxgcoj", templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Your mail is sent!');
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert('Oops... ' + JSON.stringify(error));
+        });
     }
-</script>
+  </script>
+
 
 </body>
 </html>
