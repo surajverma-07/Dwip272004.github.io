@@ -17,13 +17,14 @@ html {
 }
 
 .column {
-  float: left;
-  width: 33.3%;
+  width: 100%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
 .card {
+  display: flex;
+  align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
 }
@@ -36,18 +37,12 @@ html {
 }
 
 .container {
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .img {
-  margin-left: 50px;
+  margin-left: 20px;
   margin-top: 20px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 .title {
@@ -71,9 +66,13 @@ html {
 }
 
 @media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .img {
+    margin-left: 0;
   }
 }
 
@@ -96,18 +95,15 @@ html {
   <div class="row">
     <div class="column">
       <div class="card">
-        <img src="avnish.jpg" class="img" alt="avnish" style="width:200px; height: 200px; margin-right: 20px;">
+        <img src="avnish.jpg" class="img" alt="avnish" style="width:250px; height: 300px; margin-right: 20px;">
         <div class="container">
           <h2>Avnish Kumar</h2>
           <p class="title">CEO & Founder</p>
-          <p>The CEO of PropCentre leads with a visionary approach, driving the company's mission to connect clients with their dream properties. With extensive experience in the real estate industry, they ensure PropCentre remains a trusted and innovative partner in the market.</p>
+          <p>The CEO of PropCentre leads with a visionary approach, driving the company's mission to connect clients with their dream properties. With extensive experience in the real estate industry, they ensure PropCentre remains a trusted and innovative partner in the market. Their leadership is characterized by a deep understanding of market dynamics, a commitment to customer satisfaction, and a passion for real estate. Under their guidance, PropCentre has successfully navigated market fluctuations, embraced new technologies, and expanded its portfolio to include a diverse range of properties. The CEO's strategic vision and dedication to excellence have positioned PropCentre as a leader in the industry, fostering long-term relationships with clients, partners, and stakeholders. Their focus on integrity, transparency, and innovation continues to drive the company's growth and success.</p>
           <p>kumaravnish8279@gmail.com</p>
-
-          <p ><a href="https://www.linkedin.com/in/avnish-kumar-shubhsankalp/">Contact</a></p>
+          <p><a href="https://www.linkedin.com/in/avnish-kumar-shubhsankalp/" class="button">Contact</a></p>
         </div>
       </div>
-    </div>
-
     </div>
   </div>
 </div>

@@ -338,64 +338,83 @@
             #portfolio{
                 padding: 50px 0;
             }
-            .Work-list{
-                display: grid;
-                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-                grid-gap: 40px;
-                margin-top: 50px;
+            .tiles-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory; /* Enable snap scrolling */
             }
-            .Work{
-                border-radius: 10px;
-                position: relative;
-                overflow: hidden;
+
+            .Work-list {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 40px; /* Use gap instead of grid-gap */
+            margin-top: 50px;
+            scroll-snap-align: start; /* Align each item to the start of the container */
             }
-            .Work img{
-                width: 100%;
-                border-radius: 10px;
-                display: block;
-                transition: transform 0.5s;
+
+            .Work {
+            flex: 0 0 auto; /* Prevent flex items from shrinking */
+            width: 250px; /* Adjust the width as needed */
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start; /* Align each item to the start of the container */
             }
-            .layer{
-                width: 100%;
-                height: 0;
-                background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
-                border-radius: 10px;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding: 0 40px;
-                text-align: center;
-                font-size: 14px;
-                transition: ease-in;
+
+            .Work img {
+            width: 250px;
+            height: 350px;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s;
             }
-            .layer h3{
-                font-weight: 500;
-                margin-bottom: 20px;
+
+            .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 14px;
+            transition: ease-in;
             }
-            .layer a{
-                margin-top: 20px;
-                color: #ff004f;
-                text-decoration: none;
-                font-size: 18px;
-                line-height: 60px;
-                background: #fff;
-                width: 60px;
-                height: 60px;
-                border-radius: 50px;
-                text-align: center;
+
+            .layer h3 {
+            font-weight: 500;
+            margin-bottom: 20px;
             }
-            .Work:hover img{
-                transform: scale(1.1)
+
+            .layer a {
+            margin-top: 20px;
+            color: #ff004f;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 60px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
             }
-            .Work:hover .layer{
-                height: 100%;
+
+            .Work:hover img {
+            transform: scale(1.1);
             }
-            .btn{
+
+            .Work:hover .layer {
+            height: 100%;
+            }            .btn{
                 display: block;
                 margin: 50px auto;
                 width: fit-content;
@@ -808,73 +827,44 @@
 </div>
 </div>
 
-<!----------------------------about-------------------------------------------------------------------------->
-<div class="boxes" style="background-color: rgb(190, 225, 237);" >
-    <div id="About">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1" >
-                    <img src="https://th.bing.com/th/id/OIP.fIMrRGpQAs9WN3PA9Q_SPAAAAA?rs=1&pid=ImgDetMain">
-                </div>
+<!--featured projk in indore -->
+<div class="boxes">
+<div id="portfolio">
+    <div class="container">
+        <h4 class="sub-title" style="color: rgb(11, 176, 231); size: 15px;">OUR FEATURED PROJECT IN INDORE</h4>
+        <div class="Work-list">
+            <div class="Work">
+                <img src="farm.jpg">
+                <div class="layer">
+                    <h3><a href="farm.jpg">Farm House</a> </h3>
                     
-                <div class="about-col-2">
-                    <h1 class="sub-title" style="color:rebeccapurple ;">About Us</h1>
-                    <p style="color:#262626;">Welcome to PropCentre! Situated in the vibrant city of Indore, Madhya Pradesh, 
-                        we are dedicated to delivering unparalleled real estate solutions. With a deep-rooted 
-                        commitment to excellence and a wealth of local expertise, we strive to make your property 
-                        journey seamless and rewarding. Discover your next dream property with us today.</p>
-
-                    <div class="tab-title">
-                        <p class="tab-links active-link" onclick="opentab('services')">Services</p>
-                        <p class="tab-links" onclick="opentab('tools')">Useful Tools</p>
-                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="services-list" id="services">
-                        <div class="services-list">
-                            <div class="service-box">
-                                <img src="https://realmakeronline.com/assets/img/buy-key.jpg" alt="Service Image">
-                                <h4>Buy</h4>
-                            </div>
-                            <div class="service-box">
-                                <img src="https://realmakeronline.com/assets/img/Home-Loan.png" alt="Service Image">
-                                <h4>Home Loans</h4>
-                            </div>
-                            <div class="service-box">
-                                <img src="https://realmakeronline.com/assets/img/broker.png" alt="Service Image">
-                                <h4>Channel Partner Services</h4>
-                            </div>
-                            <div class="service-box">
-                                <img src="https://realmakeronline.com/assets/img/builder.png" alt="Service Image">
-                                <h4>Building Services</h4>
-                            </div>
-                            <div class="service-box">
-                                <img src="https://realmakeronline.com/assets/img/service.png" alt="Service Image">
-                                <h4>Other Services</h4>
-                            </div>
-                        </div>
+            <div class="Work">
+                <img src="far2.jpg">
+                <div class="layer">
+                    <h3><a href="far2.jpg">Road Indore</a> </h3>
+                    
                 </div>
-                <div class="tab-contents" id="tools">
-                    <div class="services-list">
-                        <div class="service-box">
-                            <img src="https://realmakeronline.com/assets/img/finance.png" alt="Tool Image">
-                            <h4>EMI Calculator</h4>
-                        </div>
-                        <div class="service-box">
-                            <img src="https://realmakeronline.com/assets/img/calculator.png" alt="Tool Image">
-                            <h4>Stamp Duty Calculator</h4>
-                        </div>
-                        <div class="service-box">
-                            <img src="https://realmakeronline.com/assets/img/home_affordability_calculator.png" alt="Tool Image">
-                            <h4>Home Affordability Calculator</h4>
-                        </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="Work">
+                <img src="far3.jpg">
+                <div class="layer">
+                    <h3><a href="far3.jpg">Khandwa Road Indore</a></h3>
+                    
+                </div>
+            </div>
+            <div class="Work">
+                <img src="indorebypass.jpg">
+                <div class="layer">
+                    <h3><a href="indorebypass.jpg">Indore bypass Road</a> </h3>
+                    
                 </div>
             </div>
         </div>
+        <a href="#" class="btn" style="color: coral;">See more</a>
     </div>
+</div>
 </div>
 <div class="boxes">
 <!--------services-------------event.currentTarget.classList.add("active-link") line 93 ---->
@@ -957,37 +947,78 @@
 </div>
 </div>
 <div class="boxes">
-<!----------portfolio----------------->
-<div id="portfolio">
-    <div class="container">
-        <h4 class="sub-title" style="color: rgb(11, 176, 231); size: 15px;">OUR FEATURED PROJECT IN INDORE</h4>
-        <div class="Work-list">
-            <div class="Work">
-                <img src="farm.jpg">
-                <div class="layer">
-                    <h3>Farm House</h3>
+<!----------featured projects in indore----------------->
+<!----------------------------about-------------------------------------------------------------------------->
+<div class="boxes" style="background-color: rgb(190, 225, 237);" >
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1" >
+                    <img src="https://th.bing.com/th/id/OIP.fIMrRGpQAs9WN3PA9Q_SPAAAAA?rs=1&pid=ImgDetMain">
+                </div>
                     
+                <div class="about-col-2">
+                    <h1 class="sub-title" style="color:rebeccapurple ;">About Us</h1>
+                    <p style="color:#262626;">Welcome to PropCentre! Situated in the vibrant city of Indore, Madhya Pradesh, 
+                        we are dedicated to delivering unparalleled real estate solutions. With a deep-rooted 
+                        commitment to excellence and a wealth of local expertise, we strive to make your property 
+                        journey seamless and rewarding. Discover your next dream property with us today.</p>
+
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('services')">Services</p>
+                        <p class="tab-links" onclick="opentab('tools')">Useful Tools</p>
+                    </div>
                 </div>
             </div>
-            <div class="Work">
-                <img src="far2.jpg">
-                <div class="layer">
-                    <h3>Ujjain Road Indore</h3>
-                    
+            <div class="row">
+                <div class="services-list" id="services">
+                        <div class="services-list">
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/buy-key.jpg" alt="Service Image">
+                                <h4>Buy</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/Home-Loan.png" alt="Service Image">
+                                <h4>Home Loans</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/broker.png" alt="Service Image">
+                                <h4>Channel Partner Services</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/builder.png" alt="Service Image">
+                                <h4>Building Services</h4>
+                            </div>
+                            <div class="service-box">
+                                <img src="https://realmakeronline.com/assets/img/service.png" alt="Service Image">
+                                <h4>Other Services</h4>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="Work">
-                <img src="far3.jpg">
-                <div class="layer">
-                    <h3>Khandwa Road Indore</h3>
-                    
+                <div class="tab-contents" id="tools">
+                    <div class="services-list">
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/finance.png" alt="Tool Image">
+                            <h4>EMI Calculator</h4>
+                        </div>
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/calculator.png" alt="Tool Image">
+                            <h4>Stamp Duty Calculator</h4>
+                        </div>
+                        <div class="service-box">
+                            <img src="https://realmakeronline.com/assets/img/home_affordability_calculator.png" alt="Tool Image">
+                            <h4>Home Affordability Calculator</h4>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn" style="color: coral;">See more</a>
     </div>
 </div>
-</div>
+
+
+
 <div class="boxes"  style="background-color: rgb(190, 225, 237);">
 <div id="contact">
     <div style="border: 0px solid #ccc; border-radius: 3px; margin: 30px auto 0; width: 80%; padding-top: 20px;" class="container">
