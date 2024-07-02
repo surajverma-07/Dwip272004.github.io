@@ -13,20 +13,29 @@
             emailjs.init("jybbmMrzTQa3CWuqc");
           });
         </script>
-        <style>
+        <script type="text/css" src="script.css"></script>
+        <style >
+            
+
+
+
+
+            /*-----------------------------------------------------------------------------------------------------------Main Html body*/
             .carousel-item {
-                max-width: 100%; /* Ensure items do not exceed device width */
-                text-align: center; /* Center align text or content inside carousel items */
-                overflow: hidden; /* Hide overflow content */
+                max-width: 100%; 
+                text-align: center; 
+                overflow: hidden; 
             }
 
             .carousel-item img {
-                max-width: 100%; /* Ensure images inside carousel items do not exceed device width */
-                height: auto; /* Maintain image aspect ratio */
+                max-width: 100%; 
+                height: auto; 
             }
             
             @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
             
+
+
             * {
               box-sizing: border-box;
             }
@@ -58,7 +67,7 @@
             }
             
             .boxes {
-              /*background-color: rgb(62, 119, 165);*/
+          
               color: #fff;
               display: flex;
               align-items: center;
@@ -239,7 +248,7 @@
             .tab-contents.active-tab{
                 display: block;
             }
-            /*---------------services------------*/
+            /*---------------------------------------------------------------------------Our services------------*/
             #services{
                 padding: 30px 0;
             }
@@ -334,7 +343,7 @@
             .services-list::-webkit-scrollbar-thumb:hover {
               background-color: #fff;
             }
-            /*---------------portfolio---------------------*/
+            /*---------------Featured Projects in Indore page---------------------*/
             #portfolio{
                 padding: 50px 0;
             }
@@ -496,6 +505,93 @@
             .nav.fa-solid{
                 display: none;
             }
+            
+            /* --------------------------------------------------------------------------------------------------About page specific CSS*/
+
+            #About .services-list {
+                display: flex;
+                overflow-x: auto; /* Enable horizontal scrolling if needed */
+                padding: 10px; /* Reduce padding to keep content within viewport */
+                background: none;
+                margin-top: 0; 
+                margin-bottom: 0;
+            }
+            
+            #About .service-box {
+                width: 150px; 
+                padding: 10px; 
+                margin-right: 10px; 
+            }
+            
+            #About .about-col-2 {
+                flex-basis: 60%;
+                margin-right: 20px; 
+            }
+            
+            #About .services-list {
+                display: flex;
+                overflow-x: auto; 
+                padding: 10px; 
+                margin-top: 0; 
+                margin-bottom: 0; 
+            }
+            #About .services-list .service-box {
+                background-color: transparent; 
+                color: #000; 
+                transition: background 0.5s, transform 0.5s; 
+            }
+            #About .services-list .service-box h4 {
+                background-color: transparent;
+            }
+            
+            .contact-col {
+                width: 50%;
+                padding: 20px; 
+                box-sizing: border-box;
+            }
+            
+    
+            .social-icon a {
+                text-decoration: none;
+                font-size: 30px;
+                margin-right: 15px;
+                color: #ababab;
+                display: inline-block;
+                transition: transform 0.5s;
+            }
+            
+            .social-icon a:hover {
+                color: #ff004f;
+                transform: translateY(-5px);
+            }
+            /*--------------------------------------------------------------form css-------------------------------------------------*/
+            form {
+                width: 100%;
+            }
+            
+            form input,
+            form textarea {
+                width: calc(100% - 20px); /* Adjust width and padding as needed */
+                border: 1px solid #ccc; /* Ensure consistent border styling */
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 16px; /* Adjust font size */
+                box-sizing: border-box;
+            }
+            
+            .btn {
+                background-color: #ff004f;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .btn:hover {
+                background-color: #d60046;
+            }
+            /*  -----------------------------------------------------------------------------------------------------------Mobile responsiveness */ 
             @media only screen and (max-width: 600px){
                 .menu-icon {
                     display: block;
@@ -534,92 +630,7 @@
                     position: absolute;
                     top: 25px;
                 }
-            }
-
-            #About .services-list {
-                display: flex;
-                overflow-x: auto; /* Enable horizontal scrolling if needed */
-                padding: 10px; /* Reduce padding to keep content within viewport */
-                background: none;
-                margin-top: 0; /* Remove or adjust top margin */
-                margin-bottom: 0;
-            }
-            
-            #About .service-box {
-                width: 150px; /* Adjust width of each service box */
-                padding: 10px; /* Adjust padding within each service box */
-                margin-right: 10px; /* Add margin between service boxes */
-            }
-            /* Reduce spacing between about-col-2 and services-list */
-            #About .about-col-2 {
-                flex-basis: 60%;
-                margin-right: 20px; /* Adjust margin as needed */
-            }
-            
-            #About .services-list {
-                display: flex;
-                overflow-x: auto; /* Enable horizontal scrolling if needed */
-                padding: 10px; /* Adjust padding to keep content within viewport */
-                margin-top: 0; /* Remove or adjust top margin */
-                margin-bottom: 0; /* Remove or adjust bottom margin */
-            }
-            #About .services-list .service-box {
-                background-color: transparent; /* Remove tile inside color */
-                color: #000; /* Change font color to black */
-                transition: background 0.5s, transform 0.5s; /* Optional: Keep transitions if needed */
-            }
-            #About .services-list .service-box h4 {
-                background-color: transparent; /* Remove text background color */
-            }
-            /* Adjust the columns within the Contact section */
-            .contact-col {
-                width: 50%;
-                padding: 20px; /* Adjust padding as needed */
-                box-sizing: border-box;
-            }
-            
-            /* Ensure consistent styling for social icons and form elements */
-            .social-icon a {
-                text-decoration: none;
-                font-size: 30px;
-                margin-right: 15px;
-                color: #ababab;
-                display: inline-block;
-                transition: transform 0.5s;
-            }
-            
-            .social-icon a:hover {
-                color: #ff004f;
-                transform: translateY(-5px);
-            }
-            
-            form {
-                width: 100%;
-            }
-            
-            form input,
-            form textarea {
-                width: calc(100% - 20px); /* Adjust width and padding as needed */
-                border: 1px solid #ccc; /* Ensure consistent border styling */
-                padding: 10px;
-                margin-bottom: 10px;
-                font-size: 16px; /* Adjust font size */
-                box-sizing: border-box;
-            }
-            
-            .btn {
-                background-color: #ff004f;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            
-            .btn:hover {
-                background-color: #d60046;
-            }
-            /* Responsive CSS */
+            }          
             @media only screen and (max-width: 768px) {
                 
                 .menu-icon {
@@ -699,7 +710,7 @@
                 }
             }
 
-            /* Styling for the footer */
+            /* -------------------------------------------------------------------------------------------------------Styling for the footer */
             footer {
                 background-color: #000;
                 padding: 0px 0;
@@ -724,6 +735,8 @@
                height: auto;
                margin-bottom: 10px; /* Adjust spacing */
            }
+
+
            @media only screen and (max-width: 768px) { /* Adjust breakpoint as needed */
                 #About {
                     font-size: small;
@@ -794,15 +807,11 @@
                     margin-top: 500px;
                 }
         }
-
-
-        
-    </style>
-
-
         </style>   
     </head>
     <body>
+
+    
     <div class="cont"></div>
     <div class="boxes" style="background-image: url('https://www.allthingsfinance.net/wp-content/uploads/2019/06/load-image-9.jpeg'); background-size: cover; background-position: center;">
 <div id="header" class="background-div">
@@ -827,7 +836,7 @@
 </div>
 </div>
 
-<!--featured projk in indore -->
+<!--------------------------------------------------------------Featured projk in indore----------------------------------- -->
 <div class="boxes">
 <div id="portfolio">
     <div class="container">
@@ -867,7 +876,11 @@
 </div>
 </div>
 <div class="boxes">
-<!--------services-------------event.currentTarget.classList.add("active-link") line 93 ---->
+
+
+
+
+<!-----------------------------------------------------------Our services---------------------------------------------------- ---->
 <div  id="Services" >
     <div class="container">
         <h1 class="sub-title" style="color:indigo;font-family:  system-ui;">Our Services</h1>
@@ -906,7 +919,7 @@
 </div>
 </div>
 <div class="boxes"  style="background-color: rgb(190, 225, 237);">
-<!---------------------------------------------banking partners-->
+<!---------------------------------------------banking partners------------------------------------------------------------->
 <div  id="Services" >
     <div class="container">
         <h1 class="sub-title" style="color:indigo;font-family:  system-ui;">Our Banking Partners</h1>
@@ -947,8 +960,8 @@
 </div>
 </div>
 <div class="boxes">
-<!----------featured projects in indore----------------->
-<!----------------------------about-------------------------------------------------------------------------->
+
+<!---------------------------------------------------------about-------------------------------------------------------------------------->
 <div class="boxes" style="background-color: rgb(190, 225, 237);" >
     <div id="About">
         <div class="container">
@@ -1018,7 +1031,7 @@
 </div>
 
 
-
+<!-------------------------------------------------------Contents------------------------------------------------->
 <div class="boxes"  style="background-color: rgb(190, 225, 237);">
 <div id="contact">
     <div style="border: 0px solid #ccc; border-radius: 3px; margin: 30px auto 0; width: 80%; padding-top: 20px;" class="container">
@@ -1093,6 +1106,9 @@
 </div>
 <br>
 
+
+
+<!---------------------------------------------------------------Script------------------------------------------->
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -1114,7 +1130,7 @@
     const navList = document.querySelector("nav ul");
 
     menuIcon.addEventListener("click", () => {
-        navList.classList.toggle("show"); 
+        navList.classList.toggle("show");
     });
 
     function opentab(tabName) {
@@ -1143,12 +1159,9 @@
     const triggerBottom = window.innerHeight / 5 * 4;
 
     boxes.forEach(box => {
-      // getBoundingClientRect returns a dom rectangle providing info from where it is in the viewport
+
       const boxTop = box.getBoundingClientRect().top;
 
-      // as soon as the top of the next box is less than the trigger bottom point
-      // we add class of 'show' and the boxes appear. As we scroll up the function is checked again 
-      // and will remove content boxes as well.
       if (boxTop < triggerBottom) {
         box.classList.add('show');
       } else {
