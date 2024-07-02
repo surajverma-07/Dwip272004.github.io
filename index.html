@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PropCentre</title>
         <script src="https://kit.fontawesome.com/65e886a56c.js" crossorigin="anonymous"></script>
-        <script type="text/javascript"
+        <script type="text/javascript"></script>
         <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
         <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
@@ -129,41 +129,53 @@
             }
             
             .menu-icon {
-                display: none;
-            }
-            nav{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .logo{
-                width: 140px;
-            }
-            nav ul li{
-                display: inline-block;
-                list-style: none;
-                margin: 10px 20px;
-            }
-             ul li a{
-                color: #fff;
-                text-decoration: none;
-                font-size:  18px;
-            }
-            ul li a::after{
-                content: '';
-                width:0px;
-                height: 3px;
-                background: #ff004f;
-                position:fixed;
-                transition: 0.5s;
-                margin-left: -46px;
-                margin-top: 20px;
-                overflow: hidden ;
-            }
-            ul li a:hover::after{
-                width: 45px;
-            }
+    display: none;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    display: block;
+    transition: width 0.5s;
+}
+
+ul li a:hover::after {
+    width: 45px;
+}
+
+
             .header-text{
                 margin-top: 20%;
                 font-size: 30px;
@@ -592,45 +604,34 @@
                 background-color: #d60046;
             }
             /*  -----------------------------------------------------------------------------------------------------------Mobile responsiveness */ 
-            @media only screen and (max-width: 600px){
-                .menu-icon {
-                    display: block;
-                }
-                
-                .header-text{
-                    margin-top: 100%;
-                    font-size: 16px;
-                }
-                h1 {
-                    font-size: 12px;
-                }
-                .header-text h1 {
-                    font-size: 2px;
-                }
-                nav.fa-solid{
-                    display: block;
-                    font-size: 25px;
-                }
-                nav ul{
-                    background: #ff004f;
-                    position: fixed;
-                    top: 0;
-                    right: -200;
-                    width: 200px;
-                    height: 100vh;
-                    padding-top: 50px;
-                    z-index: 2;
-                    transition: right 0.5s;
-                }
-                nav ul li{
-                    display: block;
-                    margin: 25px;
-                }
-                nav ul .fa-solid{
-                    position: absolute;
-                    top: 25px;
-                }
-            }          
+            @media only screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+        overflow-y: auto;  /* Ensure all items are visible */
+    }
+
+    nav ul.show {
+        right: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+}        
             @media only screen and (max-width: 768px) {
                 
                 .menu-icon {
@@ -817,16 +818,17 @@
 <div id="header" class="background-div">
     <div class="container">
         <nav>
-            <a href="#" class="logo"><img src="logo.png" class="logo"></a>
-            <i class="fa-solid fa-bars menu-icon"></i> 
+            <a href="#" class="logo"><img src="logo.png" alt="Logo" class="logo"></a>
+            <i class="fa-solid fa-bars menu-icon"></i>
             <ul id="sidemenu">
-              <li><a href="#header">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="#service">Services</a></li>
-              <li><a href="career.html">Career</a></li>
-              <li><a href="#contact">Contact</a></li>
+                <li><a href="#header">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </nav>
+        </nav>
+        
         <div class="header-text">
             <p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">PROPCENTRE</p>
             <h6 style="color: black;font-family: Georia;">Welcome to PropCentre, your trusted gateway to<br> exceptional real 
@@ -1126,12 +1128,16 @@
 </script>
 
 <script>
+ document.addEventListener("DOMContentLoaded", function() {
     const menuIcon = document.querySelector(".menu-icon");
     const navList = document.querySelector("nav ul");
 
     menuIcon.addEventListener("click", () => {
         navList.classList.toggle("show");
     });
+});
+
+
 
     function opentab(tabName) {
   var i;
